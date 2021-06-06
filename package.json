@@ -1,6 +1,6 @@
 {
   "name": "@hg-ui/detail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "详情展示组件",
   "main": "lib/index.js",
   "files": [
