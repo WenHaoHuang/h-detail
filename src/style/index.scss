@@ -1,0 +1,67 @@
+@import 'mixins/mixins';
+@import 'common/var';
+
+@include b(detail) {
+  &-title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  &-content {
+    display: grid;
+    grid-gap: 12px 20px;
+    grid-template-columns: repeat(24, 1fr);
+  }
+
+  @include m(item) {
+    grid-column-start: span 8;
+    line-height: 22px;
+    display: flex;
+    flex-direction: row;
+
+    @for $span from 1 to 25 {
+      &.span__#{$span} {
+        grid-column-start: span #{$span};
+      }
+    }
+
+    &__label {
+      color: #333;
+    }
+
+    &__content {
+      flex: 1;
+      overflow: hidden;
+      color: #666;
+      text-align: justify;
+
+      &.el-tooltip {
+        overflow: hidden;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &-content {
+    &.h-detail__table {
+      grid-gap: 0 0;
+      border-top: 1px solid #ebeef5;
+      border-right: 1px solid #ebeef5;
+      .h-detail--item {
+        border-bottom: 1px solid #ebeef5;
+        border-left: 1px solid #ebeef5;
+      }
+      .h-detail--item__label {
+        padding: 13px 10px;
+        border-right: 1px solid #ebeef5;
+        background-color: #f4f7fa;
+      }
+      .h-detail--item__content {
+        padding: 13px 10px;
+      }
+    }
+  }
+}
