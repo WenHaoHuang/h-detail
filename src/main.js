@@ -175,7 +175,7 @@ export default {
     },
     title: {
       type: String,
-      default: "详情展示"
+      default: ""
     }
   },
   render() {
